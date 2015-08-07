@@ -10,7 +10,6 @@ ${UPDATED_FIRSTNAME}     ""
  
 *** Testcases ***
 Verify Edit Attribute
-    [Tags]    work_in_progress
     Given There is a contact    aaa@gmail.com
     And I change the first name   aaa@gmail.com   Terry
     When I view the attributes of    aaa@gmail.com
