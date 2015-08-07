@@ -26,12 +26,13 @@ There Is A Contact    [Arguments]    ${email}
     
 
 I Change The First Name    [Arguments]    ${email}    ${firstname}
-    Click Element    //li[contains(., '${email}')]//following-sibling::li
-    Input Text  fistname  ${firstname}
+    Click Element    //li[contains(., '${email}')]//following-sibling::li/input
+    sleep    1 sec
+    Input Text  name  ${firstname}
     Click Button    save_button
 
 I View The Attributes Of    [Arguments]    ${email}
-    ${UPDATED_FIRSTNAME} =   //li[contains(., '${email}')]//following-sibling::li
+    ${UPDATED_FIRSTNAME} =    Get Text    //li[contains(., '${email}')]//following-sibling::li
     Set Suite Variable    ${UPDATED_FIRSTNAME}   
     
 The First Name Should Be    [Arguments]    ${firstname}
