@@ -17,10 +17,9 @@ Verify Edit Attribute
 
 ***Keywords***	
 Open Browser To View Contract
-    Open Browser    http://localhost:8080/massive_mailer/contactlist.jsp    firefox
+    Open Browser    http://192.168.100.21:8080/massive_mailer/contactlist.jsp    firefox
 
 There Is A Contact    [Arguments]    ${email}
-    #Element Should Contain    //*[@id="contactTable"]    aaa@gmail.com
     Element Should Contain    //li[contains(., '${email}')]    ${email}
     
 
